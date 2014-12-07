@@ -1,0 +1,2 @@
+﻿Read flag.txt 
+http://micro.pwn.seccon.jp/sh/

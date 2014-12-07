@@ -1,0 +1,4 @@
+﻿The answer is "SECCON{20141206}". 
+
+
+答えは、「SECCON{20141206}」です。 

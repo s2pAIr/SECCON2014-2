@@ -1,0 +1,9 @@
+﻿
+Fill correct string in blackbox in IOC. (Input format is SECCON{string})
+ 
+
+hoge.zip (pass:infected) 
+
+
+
+次のIOC（hoge.jpg）のブラックボックスに当てはまる文字列を入れてください。 (解答形式 SECCON{string}) 

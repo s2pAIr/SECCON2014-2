@@ -1,0 +1,12 @@
+﻿
+We've found an encoder board along with cipher text. Please help us to decrypt it. 
+
+The cipher text: BQDykmgZ0I6SaQnq4o/iEONudetXdPJdpl1UVSlU69oZOtvqnHfinOpcEfIjXy9okkVpsuw2kpKS== 
+Main: encoder board photos(GooleDrive)
+ Mirror: https://seccon2014-online.b.storage.sakura.ad.jp/encoder_board_photos.zip 
+
+暗号文と一緒にエンコーダーボードを見つけた。解読を助けて欲しい！
+The cipher text: BQDykmgZ0I6SaQnq4o/iEONudetXdPJdpl1UVSlU69oZOtvqnHfinOpcEfIjXy9okkVpsuw2kpKS==
+
+ Main: エンコーダーボード写真(GooleDrive)
+ Mirror: https://seccon2014-online.b.storage.sakura.ad.jp/encoder_board_photos.zip

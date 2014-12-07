@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT" />
+<title>Holy shellcode using Hebrew characters in UTF-16LE</title>
+<link href='http://fonts.googleapis.com/css?family=Almendra:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
+<style>
+body {
+ font-family: 'Almendra', serif;
+ color: #ffffff;
+ text-shadow: 4px 4px 5px rgba(0,0,0,0.9);
+ background: url(bg4.png) no-repeat center center fixed;
+ background-color: #960;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+table.mapping {
+	text-align:center;
+	font-size:16pt;
+}
+table.mapping th {
+	background: #333;
+	width:24pt;
+}
+table.mapping td.null {
+	background: #fff;
+}
+table.mapping td.comb0 {
+	background: #000;
+}
+table.mapping td.comb1 {
+	background: #006;
+}
+table.mapping td.comb2 {
+	background: #600;
+}
+</style>
+<script>
+function u(l,h) {
+	return String.fromCharCode(l+(h<<8));
+}
+
+function hex(num) {
+	if (num < 10) {
+		return "0x0" + (num|0).toString(16).toUpperCase();
+	} else {
+		return "0x" + (num|0).toString(16).toUpperCase();
+	}
+}
+
+function dump(uni) {
+	var max = 14;
+	var db = [];
+	for (var i = 0; i < uni.length; i++) {
+		var u16 = uni.charCodeAt(i)
+		db.push(hex((u16>>>0)&0xFF));
+		db.push(hex((u16>>>8)&0xFF));
+	}
+	var nasm = "";
+	nasm += "BITS 32\n";
+	for (var j = 0; j < db.length; j += max) {
+		nasm += "db " + db.slice(j, j + max).join(",") + "\n";
+	}
+	nasm += "db 0x0a\n";
+	return nasm;
+}
+
+function filter(uni) {
+	var comb
+	var base = 0;
+	var result = "";
+	for (var i = 0; i < uni.length; i++) {
+		var u16 = uni.charCodeAt(i);
+		var l = (u16>>>0)&0xFF;
+		var h = (u16>>>8)&0xFF;
+		do {
+			comb = -1;
+			if (h == 0x05) {
+				if (l==0xBE || l==0xC0) { comb=2; break; }
+				if (l==0xC3 || l==0xC6) { comb=2; break; }
+				if (l>=0xF3 && l<=0xF4) { comb=2; break; }
+				if (l>=0x91 && l<=0xBD) { comb=1; break; }
+				if (l>=0xBF && l<=0xC7) { comb=1; break; }
+				if (l==0xC1 || l==0xC2) { comb=1; break; }
+				if (l==0xC4 || l==0xC5) { comb=1; break; }
+				if (l>=0xD0 && l<=0xEA) { comb=0; break; }
+				if (l>=0xF0 && l<=0xF2) { comb=0; break; }
+			} else if (h == 0xFB) {
+				if (l==0x1D)            { comb=2; break; }
+				if (l==0x1E)            { comb=1; break; }
+				if (l>=0x1F && l<=0x28) { comb=0; break; }
+				if (l>=0x2A && l<=0x36) { comb=0; break; }
+				if (l>=0x38 && l<=0x3C) { comb=0; break; }
+				if (l==0x3E || l==0x40) { comb=0; break; }
+			}
+		} while(0);
+		if (comb != -1) {
+			if (base && comb==1) { return result; }
+			base = comb;
+			result += u(l, h);
+		}
+	}
+	return result;
+}
+
+function conv(text) {
+	var result = filter(text);
+	document.getElementById("in").value = result;
+	document.getElementById("out").value = dump(result);
+}
+</script>
+
+<body onload='conv(u(0x24,0xFB)+u(0x34,0xFB)+u(0x1E,0xFB)+u(0x1F,0xFB))'>
+<center>
+
+<h1>Holy shellcode using Hebrew characters in UTF-16LE</h1>
+
+<table class="mapping" cellpadding="4" cellspacing="0" border="1" width="740">
+<tr>
+<th>U+</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr>
+<tr>
+<th>FB10</th>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="comb2">יִ</td>
+<td class="comb1">&#160;ﬞ</td>
+<td class="comb0">ײַ</td>
+</tr>
+<tr>
+<th>FB20</th>
+<td class="comb0">ﬠ</td>
+<td class="comb0">ﬡ</td>
+<td class="comb0">ﬢ</td>
+<td class="comb0">ﬣ</td>
+<td class="comb0">ﬤ</td>
+<td class="comb0">ﬥ</td>
+<td class="comb0">ﬦ</td>
+<td class="comb0">ﬧ</td>
+<td class="comb0">ﬨ</td>
+<td class="comb2">﬩</td>
+<td class="comb0">שׁ</td>
+<td class="comb0">שׂ</td>
+<td class="comb0">שּׁ</td>
+<td class="comb0">שּׂ</td>
+<td class="comb0">אַ</td>
+<td class="comb0">אָ</td>
+</tr>
+<tr>
+<th>FB30</th>
+<td class="comb0">אּ</td>
+<td class="comb0">בּ</td>
+<td class="comb0">גּ</td>
+<td class="comb0">דּ</td>
+<td class="comb0">הּ</td>
+<td class="comb0">וּ</td>
+<td class="comb0">זּ</td>
+<td class="null"></td>
+<td class="comb0">טּ</td>
+<td class="comb0">יּ</td>
+<td class="comb0">ךּ</td>
+<td class="comb0">כּ</td>
+<td class="comb0">לּ</td>
+<td class="null"></td>
+<td class="comb0">מּ</td>
+<td class="null"></td>
+</tr>
+<tr>
+<th>FB40</th>
+<td class="comb0">נּ</td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+</tr>
+
+<tr>
+<th>0590</th>
+<td class="null"></td>
+<td class="comb1">&#160;֑</td>
+<td class="comb1">&#160;֒</td>
+<td class="comb1">&#160;֓</td>
+<td class="comb1">&#160;֔</td>
+<td class="comb1">&#160;֕</td>
+<td class="comb1">&#160;֖</td>
+<td class="comb1">&#160;֗</td>
+<td class="comb1">&#160;֘</td>
+<td class="comb1">&#160;֙</td>
+<td class="comb1">&#160;֚</td>
+<td class="comb1">&#160;֛</td>
+<td class="comb1">&#160;֜</td>
+<td class="comb1">&#160;֝</td>
+<td class="comb1">&#160;֞</td>
+<td class="comb1">&#160;֟</td>
+</tr>
+<tr>
+<th>05A0</th>
+<td class="comb1">&#160;֠</td>
+<td class="comb1">&#160;֡</td>
+<td class="comb1">&#160;֢</td>
+<td class="comb1">&#160;֣</td>
+<td class="comb1">&#160;֤</td>
+<td class="comb1">&#160;֥</td>
+<td class="comb1">&#160;֦</td>
+<td class="comb1">&#160;֧</td>
+<td class="comb1">&#160;֨</td>
+<td class="comb1">&#160;֩</td>
+<td class="comb1">&#160;֪</td>
+<td class="comb1">&#160;֫</td>
+<td class="comb1">&#160;֬</td>
+<td class="comb1">&#160;֭</td>
+<td class="comb1">&#160;֮</td>
+<td class="comb1">&#160;֯</td>
+</tr>
+<tr>
+<th>05B0</th>
+<td class="comb1">&#160;ְ</td>
+<td class="comb1">&#160;ֱ</td>
+<td class="comb1">&#160;ֲ</td>
+<td class="comb1">&#160;ֳ</td>
+<td class="comb1">&#160;ִ</td>
+<td class="comb1">&#160;ֵ</td>
+<td class="comb1">&#160;ֶ</td>
+<td class="comb1">&#160;ַ</td>
+<td class="comb1">&#160;ָ</td>
+<td class="comb1">&#160;ֹ</td>
+<td class="comb1">&#160;ֺ</td>
+<td class="comb1">&#160;ֻ</td>
+<td class="comb1">&#160;ּ</td>
+<td class="comb1">&#160;ֽ</td>
+<td class="comb2">־</td>
+<td class="comb1">&#160;ֿ</td>
+</tr>
+<tr>
+<th>05C0</th>
+<td class="comb2">׀</td>
+<td class="comb1">&#160;ׁ</td>
+<td class="comb1">&#160;ׂ</td>
+<td class="comb2">׃</td>
+<td class="comb1">&#160;ׄ</td>
+<td class="comb1">&#160;ׅ</td>
+<td class="comb2">׆</td>
+<td class="comb1">&#160;ׇ</td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+</tr>
+<tr>
+<th>05D0</th>
+<td class="comb0">א</td>
+<td class="comb0">ב</td>
+<td class="comb0">ג</td>
+<td class="comb0">ד</td>
+<td class="comb0">ה</td>
+<td class="comb0">ו</td>
+<td class="comb0">ז</td>
+<td class="comb0">ח</td>
+<td class="comb0">ט</td>
+<td class="comb0">י</td>
+<td class="comb0">ך</td>
+<td class="comb0">כ</td>
+<td class="comb0">ל</td>
+<td class="comb0">ם</td>
+<td class="comb0">מ</td>
+<td class="comb0">ן</td>
+</tr>
+<tr>
+<th>05E0</th>
+<td class="comb0">נ</td>
+<td class="comb0">ס</td>
+<td class="comb0">ע</td>
+<td class="comb0">ף</td>
+<td class="comb0">פ</td>
+<td class="comb0">ץ</td>
+<td class="comb0">צ</td>
+<td class="comb0">ק</td>
+<td class="comb0">ר</td>
+<td class="comb0">ש</td>
+<td class="comb0">ת</td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+</tr>
+<tr>
+<th>05F0</th>
+<td class="comb0">װ</td>
+<td class="comb0">ױ</td>
+<td class="comb0">ײ</td>
+<td class="comb2">׳</td>
+<td class="comb2">״</td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+<td class="null"></td>
+</tr>
+</table>
+
+<br />
+
+<table style="background:#ccc" width="740">
+<tr style="text-align:left">
+<th style="background:#000">Input: Hebrew</th>
+<th style="background:#000">Output: holy.nasm</th>
+</tr>
+<tr valign="top">
+<td><textarea id="in"  cols="10" rows="5" onkeyup="conv(this.value)" style="font-size:200%"></textarea></td>
+<td><textarea id="out" cols="74" rows="10"></textarea></td>
+</tr>
+</table>
+
+</center>
+</body>
+</html>

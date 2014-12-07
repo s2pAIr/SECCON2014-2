@@ -1,0 +1,19 @@
+﻿http://binkaruta.pwn.seccon.jp/binkaruta/
+
+ Karuta is a Japanese card game where you need to quickly grab a card!
+
+What is Karuta?
+ In Binary Karuta, the point is to correctly identify the CPU architecture of the binary hex dump displayed. If you wait over 60 seconds, it will time out and you will have to start again. You need to guess the correct CPU architecture 100 times in order to get the flag. There are no tricks to this. This game is to determine how well you are are reading binary hex with your eyes! There are around 35 different architectures being used for this so it will be good practice for you to get familiar with exotic binary. 
+
+ You will need to know some Japanese:
+正解： Correct
+不正解： Incorrect
+時間切れ：Timeout
+
+ Good Luck! 頑張って下さい！ 
+
+
+http://binkaruta.pwn.seccon.jp/binkaruta/ 
+約35種類のarchからダンプが表示されます。正解を選択してください。
+100回連続で解いてください。
+60秒でタイムアウトされます。また間違うと60秒のペナルティがあります。

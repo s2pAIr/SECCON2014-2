@@ -1,0 +1,33 @@
+﻿
+ropi.pwn.seccon.jp:10000
+
+ Read "/flag" and write the content to stdout, such as the following pseudo code.
+
+ open("/flag", 0);
+ read(3, buf, 32);
+ write(1, buf, 32);
+
+ Notice that the "vuln" executable is protected by an Intel Pin tool, the source code of which is "norop.cpp".
+
+
+vuln
+norop.cpp
+norop_conf
+
+
+
+
+ropi.pwn.seccon.jp:10000
+
+以下の擬似コードのように、"/flag"を読み込んでその内容をstdoutに出力せよ
+
+open("/flag", 0);
+ read(3, buf, 32);
+ write(1, buf, 32);
+
+【注】実行ファイル"vuln"はIntel Pin tool（ソースコードはnorop.cpp）で守られています。
+
+
+vuln
+norop.cpp
+norop_conf

@@ -1,0 +1,10 @@
+﻿
+This image formatted unknown file system.
+ I guessed this file system like FAT file system same but different. 
+
+https://seccon2014.b.storage.sakura.ad.jp/unknownfs.zip 
+
+
+
+このイメージは名状しがたいファイルシステムでフォーマットされています。 私が思うに、このファイルシステムはFATファイルシステムと似ていますが、実際のところ分かりません。
+ 解析して、隠されたキーを探しましょう。

@@ -1,0 +1,32 @@
+﻿
+bonsaiXSS.zip 
+
+* This challenge have 2 answers (2 steps).
+ If you collect 2 answers, you can get full point (500pts). 
+
+
+
+
+[#9 About "XSS Bonsai" Runtime Environment]
+ There is a problem when running Bonsai XSS, in that you can run the program but it will not correctly proceed past the first stage. However, it should work if you install Visual Studio Express 2013 Web (evaluation) or other versions of Visual Studio. We are sorry for the inconvenience but please install Visual Studio to fix this. You can test it by putting 
+
+ ";alert('XSS');// 
+
+ in stage 1. If you get a “Congratulation” alert box and pass to stage 2 then your environment is working. Good Luck!
+
+[#10 About "XSS Bonsai" Runtime Environment 2]
+ If you press send button , not work anything ,please check and change IE Security Settings - InternetZone as below image.
+http://files.quals.seccon.jp/bonsai_ie_settings.png 
+
+[#9 "XSS Bonsai" 動作環境について]
+Bonsai XSS の問題が上手く動作しない場合は Visual Studio Express 2013 Web (evaluation) か別のバージョンの Visual Studioのインストールした環境で試してみてください。
+
+テストはstage1 で以下を入力してみてください。
+
+";alert('XSS');// 
+
+“Congratulation” のアラートウィンドウが表示されステージ2に進めば正常に動作しています。お手数をおかけします。
+
+[#10 "XSS Bonsai" 動作環境について2]
+「send」 ボタンを押しても何も動作がしない場合には、IEのセキュリティセッティングのインターネットゾーンの設定を以下の画像のように変更をしてみてください。
+http://files.quals.seccon.jp/bonsai_ie_settings.png 

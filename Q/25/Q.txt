@@ -1,0 +1,3 @@
+﻿nc number.quals.seccon.jp 31337
+
+ sorry fixed URL

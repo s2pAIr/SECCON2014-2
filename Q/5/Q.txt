@@ -1,0 +1,8 @@
+﻿
+encrypted.gpg is encrypted by 4096-bit RSA algorithm. But I'm sure you can decrypt it. 
+
+problem.tar.xz 
+
+
+
+encrypted.gpgは実際に4096-bit RSAで暗号化されている。 でも、君ならきっと復号できるはずだ。
