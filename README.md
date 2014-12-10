@@ -132,6 +132,7 @@
 > 参考サイト
 
   - [JPEGフォーマット](http://www.w3.org/Graphics/JPEG/jfif3.pdf)
+
 　- [Exif](http://hp.vector.co.jp/authors/VA032610/JPEGFormat/AboutExif.htm)
 
 
