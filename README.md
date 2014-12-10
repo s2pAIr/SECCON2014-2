@@ -105,7 +105,7 @@
 　SECCON{Welcome to the SECCON 2014 CTF !}　correctしない…
 ```
 
-### #7 Reverse it(Binary 100)
+### #7 [Reverse it(Binary 100)](https://github.com/sireline/SECCON2014/tree/master/Q/7)
 
 > Question text
 
@@ -116,8 +116,18 @@
 > 感想
 
 ```sh
-  [JPEGフォーマット]
-   http://www.w3.org/Graphics/JPEG/jfif3.pdf
+  ファイル名から、何かが「逆」であることは推測出来る
+  バイナリエディタで、ファイルの最後から逆に解読するとJPEGのマジックナンバーが…
+  node.jsで変換スクリプトを書いてみた
+
+  [マジックナンバー]
+    jpg: 0xFF 0xD8
+    png: 0x89 0x50 0x4E 0x47 0x0D 0x0A 0x1A 0x0A
+    gif: 0x47 0x49 0x46 0x38 0x39 0x61
+    bmp: 0x42 0x4D
+
+  - [JPEGフォーマット](http://www.w3.org/Graphics/JPEG/jfif3.pdf)
+　- [Exif](http://hp.vector.co.jp/authors/VA032610/JPEGFormat/AboutExif.htm)
 ```
 
 ### #8 Let's disassemble(Binary 200)
