@@ -11,7 +11,7 @@
 
 ## CTF
 
-### #1 Welcome to SECCON(Start 100)
+### #1 [Welcome to SECCON(Start 100)](https://github.com/sireline/SECCON2014/tree/master/Q/1)
 
 > Question text
 
@@ -25,7 +25,7 @@
   解答方法の練習問題
 ```
 
-### #2 Easy Cipher(Crypto 100)
+### #2 [Easy Cipher(Crypto 100)](https://github.com/sireline/SECCON2014/tree/master/Q/2)
 
 > Question text
 
@@ -43,7 +43,7 @@
   正規表現で条件を指定して、String.parseInt()と、String.fromCharCode()でASCII文字変換
 ```
 
-### #3 Decrypt it (Easy)(Crypto 200)
+### #3 [Decrypt it (Easy)(Crypto 200)](https://github.com/sireline/SECCON2014/tree/master/Q/3)
 
 > Question text
 
@@ -56,7 +56,7 @@
 ```sh
 ```
 
-### #4 Decrypt it (Hard)(Crypto 300)
+### #4 [Decrypt it (Hard)(Crypto 300)](https://github.com/sireline/SECCON2014/tree/master/Q/4)
 
 > Question text
 
@@ -70,7 +70,7 @@
 ```sh
 ```
 
-### #5 Ms.Fortune? Misfortune. : 4096-bit RSA(Crypto 400)
+### #5 [Ms.Fortune? Misfortune. : 4096-bit RSA(Crypto 400)](https://github.com/sireline/SECCON2014/tree/master/Q/5)
 
 > Question text
 
@@ -89,7 +89,7 @@
 ```sh
 ```
 
-### #6 Shuffle(Binary 100)
+### #6 [Shuffle(Binary 100)](https://github.com/sireline/SECCON2014/tree/master/Q/6)
 
 > Question text
 
@@ -120,17 +120,22 @@
   バイナリエディタで、ファイルの最後から逆に解読するとJPEGのマジックナンバーが…
   node.jsで変換スクリプトを書いてみた
 
+  主な画像ファイルのマジックナンバーは、覚えておいた方が良い
+
   [マジックナンバー]
     jpg: 0xFF 0xD8
     png: 0x89 0x50 0x4E 0x47 0x0D 0x0A 0x1A 0x0A
     gif: 0x47 0x49 0x46 0x38 0x39 0x61
     bmp: 0x42 0x4D
+```
+
+> 参考サイト
 
   - [JPEGフォーマット](http://www.w3.org/Graphics/JPEG/jfif3.pdf)
 　- [Exif](http://hp.vector.co.jp/authors/VA032610/JPEGFormat/AboutExif.htm)
-```
 
-### #8 Let's disassemble(Binary 200)
+
+### #8 [Let's disassemble(Binary 200)](https://github.com/sireline/SECCON2014/tree/master/Q/8)
 
 > Question text
 
@@ -143,7 +148,7 @@
 ```sh
 ```
 
-### #9 Advanced RISC Machine(Exploit 300)
+### #9 [Advanced RISC Machine(Exploit 300)](https://github.com/sireline/SECCON2014/tree/master/Q/9)
 
 > Question text
 
@@ -157,7 +162,7 @@
 ```sh
 ```
 
-### #10 ROP: Impossible(Exploit 500)
+### #10 [ROP: Impossible(Exploit 500)](https://github.com/sireline/SECCON2014/tree/master/Q/10)
 
 > Question text
 
@@ -198,7 +203,7 @@
 ```sh
 ```
 
-### #11 Holy shellcode(Exploit 400)
+### #11 [Holy shellcode(Exploit 400)](https://github.com/sireline/SECCON2014/tree/master/Q/11)
 
 > Question text
 
@@ -247,7 +252,7 @@
 ```sh
 ```
 
-### #12 Japanese super micro-controller(Exploit 500)
+### #12 [Japanese super micro-controller(Exploit 500)](https://github.com/sireline/SECCON2014/tree/master/Q/12)
 
 > Question text
 
@@ -261,7 +266,7 @@
 ```sh
 ```
 
-### #13 jspuzzle(Web 100)
+### #13 [jspuzzle(Web 100)](https://github.com/sireline/SECCON2014/tree/master/Q/13)
 
 > Question text
 
@@ -276,7 +281,7 @@
   
 ```
 
-### #14 REA-JUU WATCH(Web 200)
+### #14 [REA-JUU WATCH(Web 200)](https://github.com/sireline/SECCON2014/tree/master/Q/14)
 
 > Question text
 
@@ -306,7 +311,7 @@
   正解の"1"は試してなかった…ここらへんは慣れかな。
 ```
 
-### #15 Bleeding "Heartbleed" Test Web(Web 300)
+### #15 [Bleeding "Heartbleed" Test Web(Web 300)](https://github.com/sireline/SECCON2014/tree/master/Q/15)
 
 > Question text
 
@@ -319,7 +324,7 @@
 ```sh
 ```
 
-### #16 Binary Karuta(Web 400)
+### #16 [Binary Karuta(Web 400)](https://github.com/sireline/SECCON2014/tree/master/Q/16)
 
 > Question text
 
@@ -355,7 +360,7 @@
 ```sh
 ```
 
-### #17 XSS Bonsai (aka. Hakoniwa XSS Reloaded)(Web 500)
+### #17 [XSS Bonsai (aka. Hakoniwa XSS Reloaded)(Web 500)](https://github.com/sireline/SECCON2014/tree/master/Q/17)
 
 > Question text
 
@@ -400,7 +405,7 @@
 ```sh
 ```
 
-### #18 QR (Easy)(QR 200)
+### #18 [QR (Easy)(QR 200)](https://github.com/sireline/SECCON2014/tree/master/Q/18)
 
 > Question text
 
@@ -421,7 +426,7 @@
 ```sh
 ```
 
-### #19 SECCON Wars: The Flag Awakens(QR 300)
+### #19 [SECCON Wars: The Flag Awakens(QR 300)](https://github.com/sireline/SECCON2014/tree/master/Q/19)
 
 > Question text
 
@@ -438,7 +443,7 @@
 ```sh
 ```
 
-### #20 BBQR(QR 400)
+### #20 [BBQR(QR 400)](https://github.com/sireline/SECCON2014/tree/master/Q/20)
 
 > Question text
 
@@ -451,7 +456,7 @@
 ```sh
 ```
 
-### #21 Get the key.txt(Forensics 100)
+### #21 [Get the key.txt(Forensics 100)](https://github.com/sireline/SECCON2014/tree/master/Q/21)
 
 > Question text
 
@@ -472,7 +477,7 @@
   zcat 1
 ```
 
-### #22 Read it(Forensics 300)
+### #22 [Read it(Forensics 300)](https://github.com/sireline/SECCON2014/tree/master/Q/22)
 
 > Question text
 
@@ -485,7 +490,7 @@
 ```sh
 ```
 
-### #23 UnknownFS(Forensics 400)
+### #23 [UnknownFS(Forensics 400)](https://github.com/sireline/SECCON2014/tree/master/Q/23)
 
 > Question text
 
@@ -507,7 +512,7 @@
 ```sh
 ```
 
-### #24 Confused analyte(Forensics 500)
+### #24 [Confused analyte(Forensics 500)](https://github.com/sireline/SECCON2014/tree/master/Q/24)
 
 > Question text
 
@@ -528,7 +533,7 @@
 ```sh
 ```
 
-### #25 Choose the number(Programming 100)
+### #25 [Choose the number(Programming 100)](https://github.com/sireline/SECCON2014/tree/master/Q/25)
 
 > Question text
 
@@ -543,7 +548,7 @@
 ```sh
 ```
 
-### #26 The Golden Gate(Programming 400)
+### #26 [The Golden Gate(Programming 400)](https://github.com/sireline/SECCON2014/tree/master/Q/26)
 
 > Question text
 
@@ -568,7 +573,7 @@
 ```sh
 ```
 
-### #27 Get the key(Network 100)
+### #27 [Get the key(Network 100)](https://github.com/sireline/SECCON2014/tree/master/Q/27)
 
 > Question text
 
@@ -582,7 +587,7 @@
   Wiresharkでパケット解析
 ```
 
-### #28 Get from curious "FTP" server(Network 300)
+### #28 [Get from curious "FTP" server(Network 300)](https://github.com/sireline/SECCON2014/tree/master/Q/28)
 
 > Question text
 
@@ -595,7 +600,7 @@
 ```sh
 ```
 
-### #29 version2(Network 200)
+### #29 [version2(Network 200)](https://github.com/sireline/SECCON2014/tree/master/Q/29)
 
 > Question text
 
