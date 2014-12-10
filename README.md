@@ -36,11 +36,14 @@
 > 感想
 
 ```sh
-  - 5桁以上(/[0-1]{5,7}/)：2進数
-  - 0始まり(/^[0]/)：8進数
-  - 英字あり(/[0-9a-f]{2}/):16進数
-  - 数字2桁：10進数
-  正規表現で条件を指定して、String.parseInt()と、String.fromCharCode()でASCII文字変換
+  問題文の数値の羅列は、以下と判断。
+   - 5桁以上(/^[0-1]{5,7}/)：2進数
+   - 0始まり(/^[0]/)：8進数
+   - 英字あり(/[a-f]/):16進数
+   - 数字2桁：10進数
+
+  正規表現で条件を指定して、String.parseInt()と、String.fromCharCode()で
+  ASCII文字へ変換するプログラムを作成した。
 ```
 
 ### #3 [Decrypt it (Easy)(Crypto 200)](https://github.com/sireline/SECCON2014/tree/master/Q/3)
