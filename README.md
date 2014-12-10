@@ -132,8 +132,7 @@
 > 参考サイト
 
   - [JPEGフォーマット](http://www.w3.org/Graphics/JPEG/jfif3.pdf)
-
-　- [Exif](http://hp.vector.co.jp/authors/VA032610/JPEGFormat/AboutExif.htm)
+  - [Exif](http://hp.vector.co.jp/authors/VA032610/JPEGFormat/AboutExif.htm)
 
 
 ### #8 [Let's disassemble(Binary 200)](https://github.com/sireline/SECCON2014/tree/master/Q/8)
