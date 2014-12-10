@@ -5,7 +5,7 @@
 
 var fs = require('fs');
 var Reverse = require('./Reverse');
-var inFileName = 'c:/tmp/Revit';
+var inFileName = 'c:/tmp/Reverseit';
 var outFileName = 'c:/tmp/dump';
 var result = [];
 
