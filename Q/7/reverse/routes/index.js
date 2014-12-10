@@ -5,8 +5,8 @@
 
 var fs = require('fs');
 var Reverse = require('./Reverse');
-var inFileName = 'c:/tmp/Reverseit';
-var outFileName = 'c:/tmp/dump';
+var inFileName = './Reverseit';
+var outFileName = './dump';
 var result = [];
 
 fs.readFile(inFileName, function(err, data) {
